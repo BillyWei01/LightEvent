@@ -1,5 +1,6 @@
-package com.horizon.event
+package com.horizon.base.ui
 
+import com.horizon.event.Observer
 import java.lang.ref.WeakReference
 
 class WeakObserver(target: Observer) : Observer {

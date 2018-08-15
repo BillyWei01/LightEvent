@@ -6,20 +6,19 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.horizon.event.EventManager
 import com.horizon.event.Observer
-import com.horizon.event.WeakObserver
 
 abstract class BaseActivity : AppCompatActivity(), Observer {
-    val  w  : WeakObserver
-        get() = WeakObserver(this)
+/*    private val weakObserver: WeakObserver
+        get() = WeakObserver(this)*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        EventManager.register(w)
+        EventManager.register(this)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        EventManager.unregister(w)
+        EventManager.unregister(this)
     }
 
     override fun onEvent(event: Int, vararg args: Any?) {
