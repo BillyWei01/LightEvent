@@ -1,7 +1,8 @@
-# LigntEvent
+# LightEvent
 A lightweight publish/subscribe event bus for Android.
-Code of LigntEvent is extremely simple, just less then fifty lines.
+Code of LightEvent is extremely simple, just less then fifty lines.
 But it works well.
+
 
 # Implement
 ```kotlin
@@ -117,10 +118,10 @@ object AccountManager {
 ```
 
 
-
 # Link
 For more detail, see:
 https://www.jianshu.com/p/bfce80e16141
 
 # License
 See the [LICENSE](LICENSE.md) file for license rights and limitations.
+
