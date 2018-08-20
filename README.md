@@ -1,52 +1,17 @@
 # LightEvent
-A lightweight publish/subscribe event bus for Android.
-Code of LightEvent is extremely simple, just less then fifty lines.
-But it works well.
+[ ![Download](https://api.bintray.com/packages/horizon757/maven/LightEvent/images/download.svg) ](https://bintray.com/horizon757/maven/LightEvent/_latestVersion)
 
+LightEvent is a lightweight publish/subscribe event bus for Android.
+Code of LightEvent is extremely simple, just less then half a hundred lines, and it works well.
 
-# Implement
-```kotlin
-interface Observer {
-    fun onEvent(event: Int, vararg args : Any?)
-    fun listEvents(): IntArray
+# Download
+```gradle
+repositories {
+    jcenter()
 }
-```
 
-```kotlin
-object EventManager {
-    private val handler = Handler(Looper.getMainLooper())
-    private val observers = SparseArray<LinkedList<Observer>>(16)
-
-    @JvmStatic
-    @Synchronized
-    fun register(observer: Observer?) {
-        observer?.listEvents()?.forEach { event ->
-            var list = observers.get(event)
-            if (list == null) {
-                list = LinkedList()
-                observers.put(event, list)
-            }
-            if (observer !in list) {
-                list.add(observer)
-            }
-        }
-    }
-
-    @JvmStatic
-    @Synchronized
-    fun unregister(observer: Observer?) {
-        observer?.listEvents()?.forEach { event ->
-            observers.get(event)?.removeLastOccurrence(observer)
-        }
-    }
-
-    @JvmStatic
-    @Synchronized
-    fun notify(event: Int, vararg args: Any?) {
-        observers.get(event)?.forEach { observer ->
-            handler.post { observer.onEvent(event, *args) }
-        }
-    }
+dependencies {
+    implementation  'com.horizon.event:event:1.0.1'
 }
 ```
 
