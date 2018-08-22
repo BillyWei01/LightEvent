@@ -2,7 +2,6 @@
 [ ![Download](https://api.bintray.com/packages/horizon757/maven/LightEvent/images/download.svg) ](https://bintray.com/horizon757/maven/LightEvent/_latestVersion)
 
 LightEvent is a lightweight publish/subscribe event bus for Android.
-Code of LightEvent is extremely simple, just less then half a hundred lines, and it works well.
 
 # Download
 ```gradle
