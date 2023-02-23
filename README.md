@@ -3,16 +3,6 @@
 
 LightEvent is a lightweight publish/subscribe event bus for Android.
 
-# Download
-```gradle
-repositories {
-    jcenter()
-}
-
-dependencies {
-    implementation  'com.horizon.event:event:1.0.1'
-}
-```
 
 # How to use
 
